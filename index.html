@@ -6,37 +6,48 @@
     <title>Document</title>
 </head>
 <body>    
-    <p>onkeydown Event ▼</p>  
+    <!-- 아무 키나 눌러도 반응 -->
+    <p>▼ onkeydown Event</p>
     <input type="text" onkeydown="Function_onkeydown()">
 
-    <p>onkeypress Event ▼</p>
+    <!-- 필드에 글자가 채워질 때 반응-->
+    <p>▼ onkeypress Event</p>
     <input type="text" onkeypress="Function_onkeypress()">
 
-    <p>onkeyup Event ▼</p>
+    <!-- 키를 땔 때 반응 -->
+    <p>▼ onkeyup Event</p>
     <input type="text" onkeyup="Function_onkeyup()">
 
     <hr>
-    
-    <p>onclick Event ▼</p>
+
+    <!-- 버튼을 클릭하면 Function_onclick 함수가 실행됨. 함수엔 문자가 나오는 기능이 있다. -->
+    <p>▼ onclick Event</p>
     <button onclick="Function_onclick()">클릭하세요</button>
     <p id="onclickId"></p>
 
-    <p>ondblclick Event ▼</p>
+    <!-- 버튼을 더블 클릭하면 Function_ondblclick 함수가 실행됨. 함수엔 문자가 나오는 기능이 있다. -->
+    <p>▼ ondblclick Event</p>
     <button ondblclick="Function_ondblclick()">더블클릭하세요</button>
     <p id="ondblclickId"></p>
 
-    <p>onmouseup, onmousedown Event ▼</p>
+    <!-- 문장을 누르면 mouseDown 함수, 때면 mouseUp 함수가 실행됨. 함수엔 글자와 글자의 색이 변하는 기능이 있다.-->
+    <p>▼ onmouseup, onmousedown Event</p>
     <p id="p1" onmousedown="mouseDown()" onmouseup="mouseUp()">
       이 문장을 눌러보세요!
     </p>
     
-    <p>onmousemove Event ▼</p>
+    <!-- 마우스가 이미지 위에 움직이면 bigImg_move 함수, 
+      이미지에서 벗어나면 normalImg_move 함수가 실행됨. 함수엔 이미지 크기를 조절하는 기능이 있다.-->
+    <p>▼ onmousemove Event</p>
     <img onmousemove="bigImg_move(this)" onmouseout="normalImg_move(this)" border="0" src="fallguysicon.jpg" width="128" height="128">
 
-    <p>onmouseout, onmouseover Event ▼</p>
+    <!-- 이미지 위에 마우스가 올라가면 bigImg 함수, 
+    이미지에서 벗어나면 normalImg 함수가 실행됨. 함수엔 이미지 크기를 조절하는 기능이 있다.-->
+    <p>▼ onmouseout, onmouseover Event</p>
     <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="whaleicon.png" width="128" height="128">
     
-    <p>onwheel Event ▼</p>
+    <!-- 문장 위에서 마우스 휠을 움직이면 Function_onwheel 함수가 실행됨. 함수엔 글자와 크기, 색을 조절하는 기능이 있다. -->
+    <p>▼ onwheel Event</p>
     <p id="onwheelId" onwheel="Function_onwheel()">마우스 휠을 움직여보세요</p>
 
     <script>
@@ -53,7 +64,7 @@
       alert("onkeyup Event");
     }
 
-      // Mouse Events
+    // Mouse Events
     function Function_onclick() {
       document.getElementById("onclickId").innerHTML = "▶ 클릭에 반응!";
     }
