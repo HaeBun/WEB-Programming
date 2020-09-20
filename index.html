@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>    
+    <p>onkeydown Event ▼</p>  
+    <input type="text" onkeydown="Function_onkeydown()">
+
+    <p>onkeypress Event ▼</p>
+    <input type="text" onkeypress="Function_onkeypress()">
+
+    <p>onkeyup Event ▼</p>
+    <input type="text" onkeyup="Function_onkeyup()">
+
+    <hr>
+    
+    <p>onclick Event ▼</p>
+    <button onclick="Function_onclick()">클릭하세요</button>
+    <p id="onclickId"></p>
+
+    <p>ondblclick Event ▼</p>
+    <button ondblclick="Function_ondblclick()">더블클릭하세요</button>
+    <p id="ondblclickId"></p>
+
+    <p>onmouseup, onmousedown Event ▼</p>
+    <p id="p1" onmousedown="mouseDown()" onmouseup="mouseUp()">
+      이 문장을 눌러보세요!
+    </p>
+    
+    <p>onmousemove Event ▼</p>
+    <img onmousemove="bigImg_move(this)" onmouseout="normalImg_move(this)" border="0" src="fallguysicon.jpg" width="128" height="128">
+
+    <p>onmouseout, onmouseover Event ▼</p>
+    <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="whaleicon.png" width="128" height="128">
+    
+    <p>onwheel Event ▼</p>
+    <p id="onwheelId" onwheel="Function_onwheel()">마우스 휠을 움직여보세요</p>
+
+    <script>
+    // Keyboard Events
+    function Function_onkeydown() {
+      alert("onkeydown Event");
+    }
+
+    function Function_onkeypress() {
+      alert("onkeypress Event");
+    }
+
+    function Function_onkeyup() {
+      alert("onkeyup Event");
+    }
+
+      // Mouse Events
+    function Function_onclick() {
+      document.getElementById("onclickId").innerHTML = "▶ 클릭에 반응!";
+    }
+
+    function Function_ondblclick() {
+      document.getElementById("ondblclickId").innerHTML = "▶ 더블클릭에 반응!!";
+    }
+
+    function mouseDown() {
+      var Element = document.getElementById("p1");
+      
+      Element.style.color = "red";
+      Element.textContent = "마우스를 누르고 있으면 빨간색으로 변하고❗";
+    }
+
+    function mouseUp() {
+      var Element = document.getElementById("p1");
+      
+      Element.style.color = "green";
+      Element.textContent = "손을 때면 초록색으로 변합니다😊";
+    }
+
+    function bigImg_move(x) {
+      x.style.height = "256px";
+      x.style.width = "256px";
+    }
+
+    function normalImg_move(x) {
+      x.style.height = "128px";
+      x.style.width = "128px";
+    }
+
+    function bigImg(x) {
+      x.style.height = "256px";
+      x.style.width = "256px";
+    }
+
+    function normalImg(x) {
+      x.style.height = "128px";
+      x.style.width = "128px";
+    }
+
+    function Function_onwheel() {
+      var element = document.getElementById("onwheelId");
+
+      element.style.fontSize = "35px";
+      element.style.color = "yellow";
+      element.textContent = "휠을 움직였더니 글씨도 커지고 색도 바뀌었다!";
+    }
+    </script>
+</body>
+</html>
