@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>    
+    <!-- 아무 키나 눌러도 반응 -->
+    <p>▼ onkeydown Event</p>
+    <input type="text" onkeydown="Function_onkeydown()">
+
+    <!-- 필드에 글자가 채워질 때 반응-->
+    <p>▼ onkeypress Event</p>
+    <input type="text" onkeypress="Function_onkeypress()">
+
+    <!-- 키를 땔 때 반응 -->
+    <p>▼ onkeyup Event</p>
+    <input type="text" onkeyup="Function_onkeyup()">
+
+    <hr>
+
+    <!-- 버튼을 클릭하면 Function_onclick 함수가 실행됨. 함수엔 문자가 나오는 기능이 있다. -->
+    <p>▼ onclick Event</p>
+    <button onclick="Function_onclick()">클릭하세요</button>
+    <p id="onclickId"></p>
+
+    <!-- 버튼을 더블 클릭하면 Function_ondblclick 함수가 실행됨. 함수엔 문자가 나오는 기능이 있다. -->
+    <p>▼ ondblclick Event</p>
+    <button ondblclick="Function_ondblclick()">더블클릭하세요</button>
+    <p id="ondblclickId"></p>
+
+    <!-- 문장을 누르면 mouseDown 함수, 때면 mouseUp 함수가 실행됨. 함수엔 글자와 글자의 색이 변하는 기능이 있다.-->
+    <p>▼ onmouseup, onmousedown Event</p>
+    <p id="p1" onmousedown="mouseDown()" onmouseup="mouseUp()">
+      이 문장을 눌러보세요!
+    </p>
+    
+    <!-- 마우스가 이미지 위에 움직이면 bigImg_move 함수, 
+      이미지에서 벗어나면 normalImg_move 함수가 실행됨. 함수엔 이미지 크기를 조절하는 기능이 있다.-->
+    <p>▼ onmousemove Event</p>
+    <img onmousemove="bigImg_move(this)" onmouseout="normalImg_move(this)" border="0" src="fallguysicon.jpg" width="128" height="128">
+
+    <!-- 이미지 위에 마우스가 올라가면 bigImg 함수, 
+    이미지에서 벗어나면 normalImg 함수가 실행됨. 함수엔 이미지 크기를 조절하는 기능이 있다.-->
+    <p>▼ onmouseout, onmouseover Event</p>
+    <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="whaleicon.png" width="128" height="128">
+    
+    <!-- 문장 위에서 마우스 휠을 움직이면 Function_onwheel 함수가 실행됨. 함수엔 글자와 크기, 색을 조절하는 기능이 있다. -->
+    <p>▼ onwheel Event</p>
+    <p id="onwheelId" onwheel="Function_onwheel()">마우스 휠을 움직여보세요</p>
+
+    <script>
+    // Keyboard Events
+    function Function_onkeydown() {
+      alert("onkeydown Event");
+    }
+
+    function Function_onkeypress() {
+      alert("onkeypress Event");
+    }
+
+    function Function_onkeyup() {
+      alert("onkeyup Event");
+    }
+
+    // Mouse Events
+    function Function_onclick() {
+      document.getElementById("onclickId").innerHTML = "▶ 클릭에 반응!";
+    }
+
+    function Function_ondblclick() {
+      document.getElementById("ondblclickId").innerHTML = "▶ 더블클릭에 반응!!";
+    }
+
+    function mouseDown() {
+      var Element = document.getElementById("p1");
+      
+      Element.style.color = "red";
+      Element.textContent = "마우스를 누르고 있으면 빨간색으로 변하고❗";
+    }
+
+    function mouseUp() {
+      var Element = document.getElementById("p1");
+      
+      Element.style.color = "green";
+      Element.textContent = "손을 때면 초록색으로 변합니다😊";
+    }
+
+    function bigImg_move(x) {
+      x.style.height = "256px";
+      x.style.width = "256px";
+    }
+
+    function normalImg_move(x) {
+      x.style.height = "128px";
+      x.style.width = "128px";
+    }
+
+    function bigImg(x) {
+      x.style.height = "256px";
+      x.style.width = "256px";
+    }
+
+    function normalImg(x) {
+      x.style.height = "128px";
+      x.style.width = "128px";
+    }
+
+    function Function_onwheel() {
+      var element = document.getElementById("onwheelId");
+
+      element.style.fontSize = "35px";
+      element.style.color = "yellow";
+      element.textContent = "휠을 움직였더니 글씨도 커지고 색도 바뀌었다!";
+    }
+    </script>
+</body>
+</html>
